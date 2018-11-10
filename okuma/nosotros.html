@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <title>Okuma comida Japonesa</title>
+
+    <!--Css-->
+    <style>
+        header {
+            background: #000000;
+            position: fixed;
+            overflow: hidden;
+            width: 100%;
+            z-index: 5;
+        }
+
+        /* Add a black background color to the top navigation */
+        .topnav {
+            background: #000000;
+            overflow: hidden;
+        }
+
+        /* Style the links inside the navigation bar */
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        /* Add an active class to highlight the current page */
+        .active {
+
+            color: white;
+        }
+
+        /* Hide the link that should open and close the topnav on small screens */
+        .topnav .icon {
+            display: none;
+        }
+
+        /* Dropdown container - needed to position the dropdown content */
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        /* Style the dropdown button to fit inside the topnav */
+        .dropdown .dropbtn {
+            font-size: 17px;
+            border: none;
+            outline: none;
+            color: white;
+
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        /* Style the dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            color: black;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* Style the links inside the dropdown */
+        .dropdown-content a {
+            float: none;
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        /* Add a dark background on topnav links and the dropdown button on hover */
+        .topnav a:hover,
+        .dropdown:hover .dropbtn {
+
+            color: orange;
+        }
+
+        /* Add a grey background to dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            color: orange;
+        }
+
+        /* Show the dropdown menu when the user moves the mouse over the dropdown button */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+        @media screen and (max-width: 600px) {
+
+            .topnav a:not(:first-child),
+            .dropdown .dropbtn {
+                display: none;
+            }
+
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+        @media screen and (max-width: 600px) {
+            .topnav.responsive {
+                position: relative;
+            }
+
+            .topnav.responsive a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            .topnav.responsive .dropdown {
+                float: none;
+            }
+
+            .topnav.responsive .dropdown-content {
+                position: relative;
+            }
+
+            .topnav.responsive .dropdown .dropbtn {
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+
+        /* General */
+        .nosotros-seccion {
+            background-image: url("../okuma/img/fondo-nosotros.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            height: 100%;
+            background-attachment: fixed;
+            text-align: center;
+        }
+
+        .intro-nosotros{
+            padding-top: 15%;
+            padding-bottom: 5%;
+        }
+
+        /* Footer */
+        footer {
+            font-size: 12px;
+            margin-top: 30px;
+        }
+
+        footer .footer {
+            background: #000000;
+            color: white;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            font-size: 12px;
+        }
+
+        footer a {
+            color: #ffffff;
+        }
+
+        footer .pie {
+            background: white;
+            padding: 10px;
+        }
+
+        footer i {
+            font-size: 25px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nosotros-seccion">
+
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="topnav" id="myTopnav">
+                            <a href="index.html" class="active"> <img style="width:150px;" src="../okuma/img/logo-okuma.png"></a>
+                            <a href="nosotros.html">Nosotros</a>
+                            <div class="dropdown">
+                                <button class="dropbtn"> <a href="menu.html">Menu</a>
+
+                                </button>
+                                <div class="dropdown-content">
+                                    <a href="#">Bebidas</a>
+                                    <a href="#">Sushi</a>
+                                </div>
+                            </div>
+                            <a href="contacto.html">Contacto</a>
+                            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Header -->
+
+
+        <!--Banner-->
+        <div class="container intro-nosotros">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+                    <h2>Nuestra Historia</h2>
+
+                    <hr>
+
+      
+                    <p>En cada restaurante okuma sentirás una buena vibra, disfrutaras tanto de la comida como de tu tiempo con nosotros, y te preguntaras ¿pos como le hacen estos? ...pues la verdad es que no sabemos como le hacemos, no hemos descubierto el hilo negro de nada, ni nos podemos jactar de ser los mejores, pero eso si, le ponemos muchos huevos, arroz, soya, sonrisas y todo lo que se necesita para que en cualquier restaurante okuma te la pases de pelos.
+                        </p>
+                    <p>Cuando estes con nosotros sabrás que el chef okuma del emprador ito IV creó todos los sushis para que sepan como a ti te gusta. Notarás como corren los chicos de okuma para que esperes el menor tiempo posible, ya sea en el restaurante, en servicio a domicilio o servicio para llevar, y que el “Peque” y “McFly” se lucieron con la decoración y los graficos de tu restaurante okuma favorito.</p>
+
+                    <p><img style="width:350px;" src="../okuma/img/sushi-camaron.png"></p>
+                </div>
+            </div>
+        </div>
+        <!--Banner-->
+
+        <!--Footer-->
+        <footer>
+            <div class="footer">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4 col-lg-4 text-center">
+                            <img style="width:150px;" src="../okuma/img/logo-okuma.png">
+                        </div>
+
+                        <div class="col-sm-12 col-md-4 col-lg-4 text-center">
+                            <h5>Guadalajara</h5>
+                       
+
+                           <p>Lopez Cotilla.<br>
+                            Teléfono: (33) 1204 4961</p>
+                             
+                            
+                            <p>Las Aguilas.<br>
+                            Teléfono: (33) 3344 8796 y 3631 8282</p>
+                             
+                            
+                            <p>Chapalita.<br>
+                            Teléfono: (33) 3587 6070 y 3121 5580</p>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4  text-center">
+                            <a><i class="fab fa-facebook-square"></i></a>
+                            <a><i class="fab fa-twitter"></i></a></p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="pie">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-12 text-center">Derechos Reservados 2018.</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Footer-->
+    </div>
+
+    <!-- JavaScript -->
+
+    <script>
+        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="../okuma-web/function.js"></script>
+</body>
+
+</html>
